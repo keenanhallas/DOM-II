@@ -28,3 +28,11 @@ homeImg.addEventListener("click", event => {
     event.target.style.borderRadius = "15px";
     event.target.style.marginTop = "3.5%";
 });
+
+const imgs = document.querySelectorAll("img");
+imgs.forEach(img => {
+    img.addEventListener("dblclick", event => {
+        event.target.style.padding = "1px";
+        event.target.style.border = "2px dashed lightgrey";
+    });
+});
