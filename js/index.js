@@ -22,3 +22,9 @@ navLinks.forEach(link => {
         event.target.style.lineHeight = "2.2";
     })
 });
+
+const homeImg = document.querySelector(".home img");
+homeImg.addEventListener("click", event => {
+    event.target.style.borderRadius = "15px";
+    event.target.style.marginTop = "3.5%";
+});
