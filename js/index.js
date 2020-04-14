@@ -13,14 +13,16 @@ navLinks.forEach(link => {
         event.preventDefault();
     });
     link.addEventListener("mouseover", event => {
-        event.target.style.color = "yellow";
-        event.target.style.backgroundColor = "powderblue";
+        event.target.style.color = "rgb(255, 255, 0, .9)";
+        event.target.style.backgroundColor = "rgb(176, 224, 230, .6)";
+        event.target.style.border = "1px solid powderblue";
         event.target.style.fontSize = "1.9rem";
-        event.target.style.lineHeight = "2";
+        event.target.style.lineHeight = "1.9";
     });
     link.addEventListener("mouseout", event => {
         event.target.style.color = "black";
         event.target.style.backgroundColor = "white";
+        event.target.style.border = "none";
         event.target.style.fontSize = "1.6rem";
         event.target.style.lineHeight = "2.2";
     });
