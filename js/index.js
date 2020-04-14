@@ -82,3 +82,7 @@ signUpButtons.forEach(button => {
 window.addEventListener("load", event => {
     alert("Welcome to the Fun Bus trip portal!"); //can also use window.alert - is there a difference?
 });
+
+window.addEventListener("beforeprint", event => {
+    alert("Good idea! Print this page for your future reference.");
+});
