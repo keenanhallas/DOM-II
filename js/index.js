@@ -37,7 +37,7 @@ homeImg.addEventListener("click", event => {
     event.target.style.marginTop = "3.5%";
 });
 
-let count = 1;
+let count;
 
 const imgs = document.querySelectorAll("img");
 imgs.forEach(img => {
@@ -54,9 +54,10 @@ imgs.forEach(img => {
     });
     img.addEventListener("wheel", event => { //why does this make the images visible under the nav bar?
         event.preventDefault();
-        if (count <= 0) count = 1; //this could be improved by having each img have it's own count - use closure?
-        event.target.style.opacity = count;
+        count = Number(event.target.style.opacity);
+        if (count <= 0) count = 1;
         count-= 0.01;
+        event.target.style.opacity = count;
         //event.target.style.opacity -= 0.01; //opacity won't scale like this
     });
 });
