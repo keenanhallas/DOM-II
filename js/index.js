@@ -96,3 +96,8 @@ window.addEventListener("afterprint", event => {
     })
     alert("We'll now add the images back to the page!");
 });
+
+//GSAP animation stretch goal
+gsap.from("img", {duration: 2, x: 1200, rotation: 180});
+gsap.from("img", {duration: 5, opacity: 0});
+gsap.to("nav-link.hover", {duration: 2, backgroundColor: white});
