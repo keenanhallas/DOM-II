@@ -35,4 +35,32 @@ imgs.forEach(img => {
         event.target.style.padding = "1px";
         event.target.style.border = "2px dashed lightgrey";
     });
+    img.addEventListener("drag", event => {
+        //window.alert("You can't move the images!"); //need to get the alert prompt to go away
+        event.target.style.display = "none";
+    });
+    img.addEventListener("dragend", element => {
+        event.target.style.display = "block";
+    });
+    img.addEventListener("wheel", event => {
+        event.preventDefault();
+        event.target.style.opacity -= 0.01;
+    });
+});
+
+const signUpButtons = document.querySelectorAll(".btn");
+signUpButtons.forEach(button => {
+    button.addEventListener("contextmenu", event => {
+        event.preventDefault();
+        window.alert("Please have contact & credit card information readily available.");
+    });
+});
+
+const paragraphText = document.querySelectorAll("p");
+paragraphText.forEach(p => {
+    p.addEventListener("keydown", event => {
+        if (event.keyCode === 72) {
+            event.target.style.color = "red";
+        }
+    });
 });
