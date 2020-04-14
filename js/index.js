@@ -37,6 +37,8 @@ homeImg.addEventListener("click", event => {
     event.target.style.marginTop = "3.5%";
 });
 
+let count = 0;
+
 const imgs = document.querySelectorAll("img");
 imgs.forEach(img => {
     img.addEventListener("dblclick", event => {
@@ -50,10 +52,13 @@ imgs.forEach(img => {
     img.addEventListener("dragend", element => {
         event.target.style.display = "block";
     });
-    // img.addEventListener("wheel", event => { //opacity won't scale
-    //     event.preventDefault();
-    //     event.target.style.opacity -= 0.01;
-    // });
+    img.addEventListener("wheel", event => { //why does this make the images visible under the nav bar?
+        event.preventDefault();
+        event.target.style.opacity = 0.5;
+        count++;
+        console.log(count);
+        //event.target.style.opacity -= 0.01; //opacity won't scale
+    });
 });
 
 const trips = document.querySelectorAll(".destination");
@@ -73,12 +78,6 @@ signUpButtons.forEach(button => {
     });
 });
 
-const paragraphs = document.querySelectorAll("p");
-paragraphs.forEach(p => {
-    p.addEventListener("resize", event => {
-        event.target.style.color = "red";
-        // if (event.keyCode === 72) {
-        //     event.target.selection.style.color = "red";
-        // }
-    });
+window.addEventListener("load", event => {
+    alert("Welcome to the Fun Bus trip portal!"); //can also use window.alert - is there a difference?
 });
