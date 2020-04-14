@@ -84,5 +84,15 @@ window.addEventListener("load", event => {
 });
 
 window.addEventListener("beforeprint", event => {
-    alert("Good idea! Print this page for your future reference.");
+    imgs.forEach(img => {
+        img.style.display = "none";
+    })
+    alert("Before you print, we'll hide the images to help you save ink!");
+});
+
+window.addEventListener("afterprint", event => {
+    imgs.forEach(img => {
+        img.style.display = "block";
+    })
+    alert("We'll now add the images back to the page!");
 });
