@@ -56,11 +56,12 @@ imgs.forEach(img => {
     });
     img.addEventListener("wheel", event => { //why does this make the images visible under the nav bar?
         event.preventDefault();
-        count = Number(event.target.style.opacity);
-        if (count <= 0) count = 1;
-        count-= 0.01;
-        event.target.style.opacity = count;
-        //event.target.style.opacity -= 0.01; //opacity won't scale like this
+        if (event.target.style.opacity <= 0) event.target.style.opacity = 1;
+        //count = Number(event.target.style.opacity);
+        //if (count <= 0) count = 1;
+        //count-= 0.01;
+        //event.target.style.opacity = count;
+        event.target.style.opacity -= 0.01;
     });
 });
 
